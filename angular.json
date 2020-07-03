@@ -28,6 +28,7 @@
               "src/assets"
             ],
             "styles": [
+              {"input":"src/assets/style/colors.scss"},
               "src/styles.scss"
             ],
             "scripts": []
@@ -123,6 +124,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "julien-chieze-website"
+    }
+  },
+  "defaultProject": "julien-chieze-website",
+  "cli": {
+    "analytics": false
+  }
 }
