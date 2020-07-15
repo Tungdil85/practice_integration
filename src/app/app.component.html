@@ -1,10 +1,12 @@
-<div class="dark-bg">
+<div class="dark-bg" style="z-index: 0;">
   <span></span>
 </div>
-<div class="white-bg"></div>
+<div class="white-bg" style="z-index: -1;">
+  <span></span>
+</div>
 
 <div class="device-content">
-  <app-header></app-header>
+  <app-header (changeMode)="changeMode($event)"></app-header>
   <div class="">
     <main class="main">
       <span>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deleniti aliquid, enim magnam voluptate ipsa suscipit quis voluptatibus, dolores laborum omnis, quas eveniet minima similique vero magni adipisci obcaecati autem vel?</span>

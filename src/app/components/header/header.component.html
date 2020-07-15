@@ -1,43 +1,43 @@
 <header class="header">
     <a>
-        <img src="../../../assets/julien-chieze-logo-white.svg">
+        <img [src]="getLogoSrc()">
     </a>
     <div class="menu-mobile">
 
-        <a><span>Home</span></a>
+        <a style="animation-delay: 200ms"><span>Home</span></a>
 
-        <a><span>News</span></a>
+        <a style="animation-delay: 400ms"><span>News</span></a>
 
-        <a><span>Tests</span></a>
+        <a style="animation-delay: 600ms"><span>Tests</span></a>
 
-        <a><span>Interviews</span></a>
+        <a style="animation-delay: 800ms"><span>Interviews</span></a>
 
-        <a><span>Parcours</span></a>
+        <a style="animation-delay: 1000ms"><span>Parcours</span></a>
 
-        <a><span>Contact</span></a>
+        <a style="animation-delay: 1200ms"><span>Contact</span></a>
 
     </div>
     <div class="menu-reseaux">
 
         <a>
-            <img src="../../../assets/youtube-white.svg">
+            <img [src]="getYoutubeSrc()" src="../../../assets/youtube-white.svg">
         </a>
 
         <a>
-            <img src="../../../assets/instagram-white.svg">
+            <img [src]="getInstaSrc()" src="../../../assets/instagram-white.svg">
         </a>
 
         <a>
-            <img src="../../../assets/twitter-white.svg">
+            <img [src]="getTwitterSrc()" src="../../../assets/twitter-white.svg">
         </a>
 
         <a>
-            <img src="../../../assets/facebook-white.svg">
+            <img [src]="getFacebookSrc()" src="../../../assets/facebook-white.svg">
         </a>
 
     </div>
-    <label class="switch">
-        <input type="checkbox" checked>
+    <label id="switchMode" class="switch">
+        <input (change)="colorBgChange()" type="checkbox" checked>
         <span></span>
     </label>
 </header>
