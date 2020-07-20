@@ -8,7 +8,7 @@
 /bazel-out
 
 # Config
-/src/Config
+/src/config.ts
 
 # dependencies
 /node_modules
