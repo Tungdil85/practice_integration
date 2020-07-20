@@ -1,0 +1,7 @@
+<h1 *ngIf="video" [innerHTML]="video.snippet.title"></h1>
+
+<!-- <iframe id="ytplayer" type="text/html" width="640" height="360"
+  [src]="srcVideo"
+  frameborder="0"></iframe> -->
+  <iframe *ngIf="srcVideo" [src]="srcVideo" allowfullscreen="allowfullscreen" style="opacity: 1; transform: translate3d(0px, 0px, 0px);"></iframe>
+  <p *ngIf="video" [innerHTML]="video.snippet.description"></p>

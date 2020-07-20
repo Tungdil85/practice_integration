@@ -1,0 +1,123 @@
+$primary: var(--main-color);
+$secondary: var(--secondary-color);
+
+.home-container {
+  max-width: 80vw;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+
+  .card {
+    position: relative;
+    perspective: 500px;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    display: inline-block;
+    vertical-align: top;
+    padding-bottom: 1.25rem;
+
+    h2 {
+      font-size: 1rem;
+    }
+
+    .card-title {
+      width: 75%;
+    }
+
+    .card-date {
+      position: absolute;
+      right: 20px;
+      top: 210px;
+      font-size: 0.6rem;
+      text-align: right;
+    }
+
+    img {
+      transition: 0.2s;
+      border-radius: 1%;
+    }
+
+    &:hover {
+      img {
+        transform: scale(1.01);
+        box-shadow: 0px 5px 12px 1px rgb(39, 39, 39);
+      }
+    }
+  }
+  .first-card {
+    grid-row-end: span 2;
+    grid-column-end: span 2;
+
+    h2 {
+      font-size: 1.5em;
+    }
+
+    .card-date {
+      display: none;
+    }
+  }
+}
+
+a {
+  cursor: pointer;
+}
+a.btn-home {
+  display: block;
+  width: 100%;
+  color: $secondary;
+  font-weight: 700;
+  font-size: 1rem;
+  text-align: center;
+  border-radius: 0.3125rem;
+  padding: 0.75rem;
+  margin-top: 1.875rem;
+  position: relative;
+}
+a.btn-home:hover {
+  color: $primary;
+}
+
+.btn-home::before,
+.btn-home::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  //on fait des transate a 50% pour que l'annimation du cardre qui diminu au hover puisse "dépasser du cadre"
+}
+
+.btn-home::before {
+  background-color: $primary;
+  border-radius: 0.3125rem;
+  transition: width 0.1s, height 0.1s;
+  opacity: 1;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+.btn-home:hover {
+  &:before {
+    background-color: $secondary;
+  }
+  &:after {
+    opacity: 1;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.btn-home::after {
+  background-color: transparent;
+  border: 2px solid $primary;
+  border-radius: 0.3125rem;
+  transition: width 0.2s, height 0.2s;
+  opacity: 0;
+  width: 105%;
+  height: 120%;
+}
+
+img {
+  width: 100%;
+}

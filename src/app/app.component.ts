@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { YoutubeService } from './services/youtube/youtube.service';
 
 @Component({
   selector: 'app-root',
@@ -10,12 +11,11 @@ export class AppComponent implements OnInit {
 
   public isDarkMode: boolean = true;
 
-  constructor() {}
+  constructor(
+    private _youtube: YoutubeService
+  ) {}
   ngOnInit(): void {
-    this.initMode();
   }
-
-  public initMode() {}
 
   public changeMode(p_isDarkMode) {
     this.isDarkMode = p_isDarkMode;
@@ -25,12 +25,12 @@ export class AppComponent implements OnInit {
 
     if (this.isDarkMode) {
       let darModeDiv: any = document.getElementsByClassName('dark-bg')[0];
-      darModeDiv.style['z-index'] = '0';
+      darModeDiv.style['z-index'] = '-100';
       darModeDiv.style['top'] = position.top + 'px';
       darModeDiv.style['left'] = position.left + 'px';
 
       let whiteModeDiv: any = document.getElementsByClassName('white-bg')[0];
-      whiteModeDiv.style['z-index'] = '-1';
+      whiteModeDiv.style['z-index'] = '-101';
 
       darModeDiv.children[0].animate(
         [
@@ -51,20 +51,20 @@ export class AppComponent implements OnInit {
 
       document.documentElement.style.setProperty(
         '--main-color',
-        'rgb(255, 255, 255)'
+        'rgb(255, 255, 255)' //blanc
       );
       document.documentElement.style.setProperty(
         '--secondary-color',
-        'rgb(0, 0, 0)'
+        'rgb(0, 0, 0)' //noir
       );
     } else {
       let darModeDiv: any = document.getElementsByClassName('white-bg')[0];
-      darModeDiv.style['z-index'] = '-1';
+      darModeDiv.style['z-index'] = '-101';
       darModeDiv.style['top'] = position.top + 'px';
       darModeDiv.style['left'] = position.left + 'px';
 
       let whiteModeDiv: any = document.getElementsByClassName('white-bg')[0];
-      whiteModeDiv.style['z-index'] = '0';
+      whiteModeDiv.style['z-index'] = '-100';
       whiteModeDiv.children[0].animate(
         [
           // keyframes

@@ -1,0 +1,22 @@
+<div class="home-container">
+    <div *ngFor="let video of listVideos, let index = index" class="card" [ngClass]="{'first-card': index==0}">
+        <a [routerLink]="['/posts', video.id.videoId]">
+            <img [src]="video.snippet.thumbnails.medium.url">
+
+            <div class="card-desciption">
+
+                <h2 class="card-title" [innerHTML]="video.snippet.title"></h2>
+
+                <div class="card-date">
+                    <span>{{getDayVideo(video)}}</span>
+                    <br>
+                    <span>{{getYearVideo(video)}}</span>
+                </div>
+            </div>
+        </a>
+    </div>
+</div>
+
+<a class="btn-home">
+    Voir toutes les news
+</a>
