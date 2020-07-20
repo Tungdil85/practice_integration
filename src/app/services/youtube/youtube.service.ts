@@ -3,12 +3,13 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, Subscriber } from 'rxjs';
 import { TechnicalService } from '../technical/technical.service';
 import { YoutubeVideo } from 'src/app/components/models/video.model';
+import { Config } from 'src/config';
 
 @Injectable({
   providedIn: 'root',
 })
 export class YoutubeService {
-  private API_KEY = 'AIzaSyBGawEPRIam84DxkSV5Prqh54YeZmdj6Vo';
+  private API_KEY = Config.YOUTUBE_API_KEY;
   private channelId = "UCRXcryyD7dzNQzd0Zkbj3ug";
 
   constructor(
